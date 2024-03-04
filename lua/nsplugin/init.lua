@@ -3,7 +3,7 @@ local M = {}
 function M.setup(opts)
 	opts = opts or {}
 
-	vim.keymap.set("n", "<Leader>netsuite", function()
+	vim.keymap.set("n", "<Leader>z", function()
 		if opts.name then
 			print("hello, " .. opts.name)
 		else
