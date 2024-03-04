@@ -1,11 +1,15 @@
 local M = {}
 
-function M.greet()
-	vim.api.nvim_echo({ { "Hello from NS Plugin!", "None" } }, false, {})
-end
+function M.setup(opts)
+	opts = opts or {}
 
-function M.setup()
-	vim.cmd([[ command! NSPluginGreet lua require'nsplugin'.greet() ]])
+	vim.keymap.set("n", "<Leader>h", function()
+		if opts.name then
+			print("hello, " .. opts.name)
+		else
+			print("hello")
+		end
+	end)
 end
 
 return M
